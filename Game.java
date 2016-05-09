@@ -6,7 +6,7 @@ import java.io.FileNotFoundException;
 
 public class Game {
 	public static void main(String[] args) {
-		System.out.println("Welcome to capital game");
+		System.out.println("Guess the capital city");
 		Console console = System.console();
 		try(BufferedReader br = new BufferedReader(new FileReader("capitals.csv"))) {
 			String line;
