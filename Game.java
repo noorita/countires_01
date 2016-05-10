@@ -8,15 +8,19 @@ public class Game {
 	public static void main(String[] args) {
 		System.out.println("Guess the capital city");
 		Console console = System.console();
+                int total=0;
+                int correctCount=0;
 		try(BufferedReader br = new BufferedReader(new FileReader("capitals.csv"))) {
 			String line;
 			while ((line = br.readLine()) != null) {
+                        total++;
 				String[] cols = line.split(",");
 				String country = cols[0];
 				String capital = cols[1];
 				String answer = console.readLine("What is the capital of " + country + "? ");
 				if (answer.equalsIgnoreCase(capital)) {
 					System.out.println("Correct!");
+                                    correctCount++;
 				}
 				else {
 					System.out.println("No, the answer is " + capital);	
@@ -28,5 +32,6 @@ public class Game {
 		} catch (IOException e) {
 		e.printStackTrace();
 		}
+         System.out.println("you have answer " + "  " + correctCount +"  out of "+ total);
 	}
 }
