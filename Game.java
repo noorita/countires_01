@@ -32,6 +32,6 @@ public class Game {
 		} catch (IOException e) {
 		e.printStackTrace();
 		}
-         System.out.println("you have answer " + "  " + correctCount +"  out of "+ total);
+         System.out.println("you have answer " + "  " + (total-correctCount) + " incorect ");
 	}
 }
