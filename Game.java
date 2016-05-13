@@ -7,6 +7,7 @@ import java.io.FileNotFoundException;
 public class Game {
 	public static void main(String[] args) {
 		System.out.println("Guess the capital city");
+                System.out.println("type exit are 0 to stop the game at any point");
 		Console console = System.console();
                 int total=0;
                 int correctCount=0;
@@ -18,6 +19,9 @@ public class Game {
 				String country = cols[0];
 				String capital = cols[1];
 				String answer = console.readLine("What is the capital of " + country + "? ");
+                                if(answer.equalsIgnoreCase("exit") || answer.equalsIgnoreCase("0")){
+                                break;
+                                }
 				if (answer.equalsIgnoreCase(capital)) {
 					System.out.println("Correct!");
                                     correctCount++;
